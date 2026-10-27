@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 800 600" style="background-color: #f0f7f0;">
+  <!-- 
+    "Balai Katerina" - Beautified SVG Site Map
+    Generated from KML Polygon Data.
+    Map Projection: Isometric Visualization of Lat/Lon coordinates.
+  -->
+
+  <title>Balai Katerina Site Map</title>
+
+  <defs>
+    <!-- Define a subtle grassy texture for the background areas -->
+    <pattern id="grassPattern" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="#e0f0e0"/>
+      <circle cx="20" cy="20" r="1.5" fill="#c0e0c0"/>
+      <circle cx="70" cy="60" r="1.5" fill="#c0e0c0"/>
+      <circle cx="40" cy="80" r="1" fill="#c0e0c0"/>
+    </pattern>
+    
+    <!-- Define a drop shadow filter for depth -->
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.3"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Generic Building Style -->
+    <style type="text/css">
+      .building {
+        stroke: #666;
+        stroke-width: 1;
+        filter: url(#shadow);
+      }
+      .label {
+        font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        fill: #333;
+        pointer-events: none;
+        text-anchor: middle;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Layer (Grass) -->
+  <rect x="0" y="0" width="800" height="600" fill="url(#grassPattern)"/>
+
+  <!-- 
+    MAP DATA TRANSFORMATION 
+    Lat 14.345 -> SVG Y approx 350-550 (Inverted)
+    Lon 121.085 -> SVG X approx 100-500
+    Coordinates have been scaled and shifted to fit an isometric perspective view.
+  -->
+
+  <!-- G: A. Mabini Road (The long boundary strip on the west) -->
+  <path d="M100,580 L180,100 L220,110 L150,590 Z" fill="#b0b0b0" stroke="#999" stroke-width="2"/>
+  <text transform="translate(160, 350) rotate(-80)" class="label" font-weight="bold" fill="#555">A. Mabini Road</text>
+
+  <!-- F: Parking Area (Adjacent to the road) -->
+  <path d="M200,550 L240,300 L310,315 L270,565 Z" fill="#d0d0d0" class="building"/>
+  <text x="255" y="450" class="label">Parking</text>
+
+  <!-- E: Circular Driveway (The complex loop) -->
+  <path d="M350,495 C345,460 345,430 360,400 C370,375 390,380 400,410 C405,425 390,440 380,465 C370,485 375,500 350,495 Z M365,480 C380,445 385,415 400,405 C410,400 420,410 415,420 C405,445 390,465 375,480 Z" fill="#c8c8b8" stroke="#a0a090" stroke-width="1"/>
+
+  <!-- A: Resort Area (The main large encompassing boundary) -->
+  <path d="M240,480 L245,430 L410,390 L405,330 L580,250 L650,450 L480,540 L465,420 Z" fill="#d4edc9" stroke="#8bc34a" stroke-width="2" stroke-dasharray="5 3"/>
+  <text x="480" y="370" class="label" font-size="14" font-weight="bold" fill="#558b2f">Resort Area</text>
+
+  <!-- B: Pavilion (Large central building) -->
+  <path d="M480,425 L490,360 L610,335 L600,400 Z" fill="#fff3e0" class="building"/>
+  <text x="545" y="385" class="label">Pavilion</text>
+
+  <!-- C: Swimming Pool (Blue polygon) -->
+  <path d="M480,320 L510,280 L600,295 L570,340 Z" fill="#4fc3f7" stroke="#0277bd" stroke-width="2" rx="5"/>
+  <text x="540" y="315" class="label" fill="#01579b">Swimming Pool</text>
+
+  <!-- H: Restroom (Small utility building near pool) -->
+  <path d="M615,340 L625,280 L710,275 L690,330 Z" fill="#e0f2f1" class="building"/>
+  <text x="660" y="310" class="label" font-size="10">Restroom</text>
+
+  <!-- D: Gazebo (Small structure near entry) -->
+  <path d="M460,340 L480,270 L560,255 L540,320 Z" fill="#fff9c4" class="building"/>
+  <text x="510" y="300" class="label" font-size="10">Gazebo</text>
+
+  <!-- I: Pool Cabana (Small structure right next to pool) -->
+  <path d="M580,250 L640,245 L650,290 L590,295 Z" fill="#fff3e0" class="building"/>
+  <text x="615" y="275" class="label" font-size="10">Cabana</text>
+
+  <!-- Compass Rose (Added for orientation) -->
+  <g transform="translate(730, 50)">
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#999" stroke-width="1"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#999" stroke-width="1"/>
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#999" stroke-width="1"/>
+    <polygon points="0,-25 5,-10 -5,-10" fill="#e53935"/>
+    <text x="0" y="-28" font-size="10" text-anchor="middle" fill="#e53935">N</text>
+  </g>
+  
+  <!-- Footer Note -->
+  <text x="400" y="585" class="label" font-size="10" fill="#999">Boundary visualization is approximate.</text>
+
+</svg>
